@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/bts/workspace/ho5_imc/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -123,6 +123,32 @@ imc/fast:
 	$(MAKE) -f CMakeFiles/imc.dir/build.make CMakeFiles/imc.dir/build
 .PHONY : imc/fast
 
+#=============================================================================
+# Target rules for targets named imc_101
+
+# Build rule for target.
+imc_101: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 imc_101
+.PHONY : imc_101
+
+# fast build rule for target.
+imc_101/fast:
+	$(MAKE) -f CMakeFiles/imc_101.dir/build.make CMakeFiles/imc_101.dir/build
+.PHONY : imc_101/fast
+
+#=============================================================================
+# Target rules for targets named udp
+
+# Build rule for target.
+udp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 udp
+.PHONY : udp
+
+# fast build rule for target.
+udp/fast:
+	$(MAKE) -f CMakeFiles/udp.dir/build.make CMakeFiles/udp.dir/build
+.PHONY : udp/fast
+
 IMC/Base/Factory.o: IMC/Base/Factory.cpp.o
 
 .PHONY : IMC/Base/Factory.o
@@ -150,18 +176,80 @@ IMC/Base/Factory.cpp.s:
 	$(MAKE) -f CMakeFiles/imc.dir/build.make CMakeFiles/imc.dir/IMC/Base/Factory.cpp.s
 .PHONY : IMC/Base/Factory.cpp.s
 
+UDP/DatagramSocket.o: UDP/DatagramSocket.cpp.o
+
+.PHONY : UDP/DatagramSocket.o
+
+# target to build an object file
+UDP/DatagramSocket.cpp.o:
+	$(MAKE) -f CMakeFiles/udp.dir/build.make CMakeFiles/udp.dir/UDP/DatagramSocket.cpp.o
+.PHONY : UDP/DatagramSocket.cpp.o
+
+UDP/DatagramSocket.i: UDP/DatagramSocket.cpp.i
+
+.PHONY : UDP/DatagramSocket.i
+
+# target to preprocess a source file
+UDP/DatagramSocket.cpp.i:
+	$(MAKE) -f CMakeFiles/udp.dir/build.make CMakeFiles/udp.dir/UDP/DatagramSocket.cpp.i
+.PHONY : UDP/DatagramSocket.cpp.i
+
+UDP/DatagramSocket.s: UDP/DatagramSocket.cpp.s
+
+.PHONY : UDP/DatagramSocket.s
+
+# target to generate assembly for a file
+UDP/DatagramSocket.cpp.s:
+	$(MAKE) -f CMakeFiles/udp.dir/build.make CMakeFiles/udp.dir/UDP/DatagramSocket.cpp.s
+.PHONY : UDP/DatagramSocket.cpp.s
+
+imc_101.o: imc_101.cpp.o
+
+.PHONY : imc_101.o
+
+# target to build an object file
+imc_101.cpp.o:
+	$(MAKE) -f CMakeFiles/imc_101.dir/build.make CMakeFiles/imc_101.dir/imc_101.cpp.o
+.PHONY : imc_101.cpp.o
+
+imc_101.i: imc_101.cpp.i
+
+.PHONY : imc_101.i
+
+# target to preprocess a source file
+imc_101.cpp.i:
+	$(MAKE) -f CMakeFiles/imc_101.dir/build.make CMakeFiles/imc_101.dir/imc_101.cpp.i
+.PHONY : imc_101.cpp.i
+
+imc_101.s: imc_101.cpp.s
+
+.PHONY : imc_101.s
+
+# target to generate assembly for a file
+imc_101.cpp.s:
+	$(MAKE) -f CMakeFiles/imc_101.dir/build.make CMakeFiles/imc_101.dir/imc_101.cpp.s
+.PHONY : imc_101.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... imc"
-	@echo "... edit_cache"
+	@echo "... imc_101"
+	@echo "... udp"
 	@echo "... IMC/Base/Factory.o"
 	@echo "... IMC/Base/Factory.i"
 	@echo "... IMC/Base/Factory.s"
+	@echo "... UDP/DatagramSocket.o"
+	@echo "... UDP/DatagramSocket.i"
+	@echo "... UDP/DatagramSocket.s"
+	@echo "... imc_101.o"
+	@echo "... imc_101.i"
+	@echo "... imc_101.s"
 .PHONY : help
 
 
