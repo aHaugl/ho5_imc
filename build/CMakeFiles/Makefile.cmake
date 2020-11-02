@@ -42,7 +42,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/hello.hpp.dir/DependInfo.cmake"
+  "CMakeFiles/Hello.dir/DependInfo.cmake"
   "CMakeFiles/imc.dir/DependInfo.cmake"
-  "CMakeFiles/imc_101.dir/DependInfo.cmake"
-  "CMakeFiles/udp.dir/DependInfo.cmake"
+  "CMakeFiles/homework.hpp.dir/DependInfo.cmake"
+  "CMakeFiles/Homework.dir/DependInfo.cmake"
   )

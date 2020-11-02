@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/Homework.dir/homework.cpp.o  -o Homework libimc.a 

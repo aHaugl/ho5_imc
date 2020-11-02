@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/bts/workspace/ho5_imc/ho5_imc/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,6 +111,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named hello.hpp
+
+# Build rule for target.
+hello.hpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hello.hpp
+.PHONY : hello.hpp
+
+# fast build rule for target.
+hello.hpp/fast:
+	$(MAKE) -f CMakeFiles/hello.hpp.dir/build.make CMakeFiles/hello.hpp.dir/build
+.PHONY : hello.hpp/fast
+
+#=============================================================================
+# Target rules for targets named Hello
+
+# Build rule for target.
+Hello: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Hello
+.PHONY : Hello
+
+# fast build rule for target.
+Hello/fast:
+	$(MAKE) -f CMakeFiles/Hello.dir/build.make CMakeFiles/Hello.dir/build
+.PHONY : Hello/fast
+
+#=============================================================================
 # Target rules for targets named imc
 
 # Build rule for target.
@@ -124,30 +150,30 @@ imc/fast:
 .PHONY : imc/fast
 
 #=============================================================================
-# Target rules for targets named imc_101
+# Target rules for targets named homework.hpp
 
 # Build rule for target.
-imc_101: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 imc_101
-.PHONY : imc_101
+homework.hpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 homework.hpp
+.PHONY : homework.hpp
 
 # fast build rule for target.
-imc_101/fast:
-	$(MAKE) -f CMakeFiles/imc_101.dir/build.make CMakeFiles/imc_101.dir/build
-.PHONY : imc_101/fast
+homework.hpp/fast:
+	$(MAKE) -f CMakeFiles/homework.hpp.dir/build.make CMakeFiles/homework.hpp.dir/build
+.PHONY : homework.hpp/fast
 
 #=============================================================================
-# Target rules for targets named udp
+# Target rules for targets named Homework
 
 # Build rule for target.
-udp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 udp
-.PHONY : udp
+Homework: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Homework
+.PHONY : Homework
 
 # fast build rule for target.
-udp/fast:
-	$(MAKE) -f CMakeFiles/udp.dir/build.make CMakeFiles/udp.dir/build
-.PHONY : udp/fast
+Homework/fast:
+	$(MAKE) -f CMakeFiles/Homework.dir/build.make CMakeFiles/Homework.dir/build
+.PHONY : Homework/fast
 
 IMC/Base/Factory.o: IMC/Base/Factory.cpp.o
 
@@ -176,59 +202,65 @@ IMC/Base/Factory.cpp.s:
 	$(MAKE) -f CMakeFiles/imc.dir/build.make CMakeFiles/imc.dir/IMC/Base/Factory.cpp.s
 .PHONY : IMC/Base/Factory.cpp.s
 
-UDP/DatagramSocket.o: UDP/DatagramSocket.cpp.o
+hello.o: hello.cpp.o
 
-.PHONY : UDP/DatagramSocket.o
-
-# target to build an object file
-UDP/DatagramSocket.cpp.o:
-	$(MAKE) -f CMakeFiles/udp.dir/build.make CMakeFiles/udp.dir/UDP/DatagramSocket.cpp.o
-.PHONY : UDP/DatagramSocket.cpp.o
-
-UDP/DatagramSocket.i: UDP/DatagramSocket.cpp.i
-
-.PHONY : UDP/DatagramSocket.i
-
-# target to preprocess a source file
-UDP/DatagramSocket.cpp.i:
-	$(MAKE) -f CMakeFiles/udp.dir/build.make CMakeFiles/udp.dir/UDP/DatagramSocket.cpp.i
-.PHONY : UDP/DatagramSocket.cpp.i
-
-UDP/DatagramSocket.s: UDP/DatagramSocket.cpp.s
-
-.PHONY : UDP/DatagramSocket.s
-
-# target to generate assembly for a file
-UDP/DatagramSocket.cpp.s:
-	$(MAKE) -f CMakeFiles/udp.dir/build.make CMakeFiles/udp.dir/UDP/DatagramSocket.cpp.s
-.PHONY : UDP/DatagramSocket.cpp.s
-
-imc_101.o: imc_101.cpp.o
-
-.PHONY : imc_101.o
+.PHONY : hello.o
 
 # target to build an object file
-imc_101.cpp.o:
-	$(MAKE) -f CMakeFiles/imc_101.dir/build.make CMakeFiles/imc_101.dir/imc_101.cpp.o
-.PHONY : imc_101.cpp.o
+hello.cpp.o:
+	$(MAKE) -f CMakeFiles/hello.hpp.dir/build.make CMakeFiles/hello.hpp.dir/hello.cpp.o
+	$(MAKE) -f CMakeFiles/Hello.dir/build.make CMakeFiles/Hello.dir/hello.cpp.o
+.PHONY : hello.cpp.o
 
-imc_101.i: imc_101.cpp.i
+hello.i: hello.cpp.i
 
-.PHONY : imc_101.i
+.PHONY : hello.i
 
 # target to preprocess a source file
-imc_101.cpp.i:
-	$(MAKE) -f CMakeFiles/imc_101.dir/build.make CMakeFiles/imc_101.dir/imc_101.cpp.i
-.PHONY : imc_101.cpp.i
+hello.cpp.i:
+	$(MAKE) -f CMakeFiles/hello.hpp.dir/build.make CMakeFiles/hello.hpp.dir/hello.cpp.i
+	$(MAKE) -f CMakeFiles/Hello.dir/build.make CMakeFiles/Hello.dir/hello.cpp.i
+.PHONY : hello.cpp.i
 
-imc_101.s: imc_101.cpp.s
+hello.s: hello.cpp.s
 
-.PHONY : imc_101.s
+.PHONY : hello.s
 
 # target to generate assembly for a file
-imc_101.cpp.s:
-	$(MAKE) -f CMakeFiles/imc_101.dir/build.make CMakeFiles/imc_101.dir/imc_101.cpp.s
-.PHONY : imc_101.cpp.s
+hello.cpp.s:
+	$(MAKE) -f CMakeFiles/hello.hpp.dir/build.make CMakeFiles/hello.hpp.dir/hello.cpp.s
+	$(MAKE) -f CMakeFiles/Hello.dir/build.make CMakeFiles/Hello.dir/hello.cpp.s
+.PHONY : hello.cpp.s
+
+homework.o: homework.cpp.o
+
+.PHONY : homework.o
+
+# target to build an object file
+homework.cpp.o:
+	$(MAKE) -f CMakeFiles/homework.hpp.dir/build.make CMakeFiles/homework.hpp.dir/homework.cpp.o
+	$(MAKE) -f CMakeFiles/Homework.dir/build.make CMakeFiles/Homework.dir/homework.cpp.o
+.PHONY : homework.cpp.o
+
+homework.i: homework.cpp.i
+
+.PHONY : homework.i
+
+# target to preprocess a source file
+homework.cpp.i:
+	$(MAKE) -f CMakeFiles/homework.hpp.dir/build.make CMakeFiles/homework.hpp.dir/homework.cpp.i
+	$(MAKE) -f CMakeFiles/Homework.dir/build.make CMakeFiles/Homework.dir/homework.cpp.i
+.PHONY : homework.cpp.i
+
+homework.s: homework.cpp.s
+
+.PHONY : homework.s
+
+# target to generate assembly for a file
+homework.cpp.s:
+	$(MAKE) -f CMakeFiles/homework.hpp.dir/build.make CMakeFiles/homework.hpp.dir/homework.cpp.s
+	$(MAKE) -f CMakeFiles/Homework.dir/build.make CMakeFiles/Homework.dir/homework.cpp.s
+.PHONY : homework.cpp.s
 
 # Help Target
 help:
@@ -236,20 +268,22 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... hello.hpp"
+	@echo "... Hello"
+	@echo "... edit_cache"
 	@echo "... imc"
-	@echo "... imc_101"
-	@echo "... udp"
+	@echo "... homework.hpp"
+	@echo "... Homework"
 	@echo "... IMC/Base/Factory.o"
 	@echo "... IMC/Base/Factory.i"
 	@echo "... IMC/Base/Factory.s"
-	@echo "... UDP/DatagramSocket.o"
-	@echo "... UDP/DatagramSocket.i"
-	@echo "... UDP/DatagramSocket.s"
-	@echo "... imc_101.o"
-	@echo "... imc_101.i"
-	@echo "... imc_101.s"
+	@echo "... hello.o"
+	@echo "... hello.i"
+	@echo "... hello.s"
+	@echo "... homework.o"
+	@echo "... homework.i"
+	@echo "... homework.s"
 .PHONY : help
 
 

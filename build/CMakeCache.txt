@@ -181,11 +181,17 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Dependencies for target
+hello.hpp_LIB_DEPENDS:STATIC=
+
 //Value Computed by CMake
 ho5_imc_BINARY_DIR:STATIC=/home/bts/workspace/ho5_imc/ho5_imc/build
 
 //Value Computed by CMake
 ho5_imc_SOURCE_DIR:STATIC=/home/bts/workspace/ho5_imc/ho5_imc
+
+//Dependencies for target
+homework.hpp_LIB_DEPENDS:STATIC=
 
 //Dependencies for target
 imc_LIB_DEPENDS:STATIC=

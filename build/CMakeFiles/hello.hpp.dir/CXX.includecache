@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bts/workspace/ho5_imc/ho5_imc/hello.cpp
+hello.hpp
+/home/bts/workspace/ho5_imc/ho5_imc/hello.hpp
+iostream
+-
+
+/home/bts/workspace/ho5_imc/ho5_imc/hello.hpp
+

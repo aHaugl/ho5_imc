@@ -22,7 +22,6 @@ int main() {
 
     setEntParam.params.push_back(entParam);
 
-
     Loiter loiter;
     loiter.lat = 0.7188016469344056;
     loiter.lon = -0.15194250254286037;
@@ -71,3 +70,4 @@ int main() {
     Packet::serialize(&planSpec, (uint8_t *) buf_ps, size_ps);    // serialize message
 
     std::cout << buf_ps;
+}
