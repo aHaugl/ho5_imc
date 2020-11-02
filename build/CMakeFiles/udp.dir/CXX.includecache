@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/bts/workspace/ho5_imc/UDP/DatagramSocket.cpp
+/home/bts/workspace/ho5_imc/ho5_imc/UDP/DatagramSocket.cpp
 DatagramSocket.h
-/home/bts/workspace/ho5_imc/UDP/DatagramSocket.h
+/home/bts/workspace/ho5_imc/ho5_imc/UDP/DatagramSocket.h
 
-/home/bts/workspace/ho5_imc/UDP/DatagramSocket.h
+/home/bts/workspace/ho5_imc/ho5_imc/UDP/DatagramSocket.h
 winsock2.h
 -
 sys/types.h

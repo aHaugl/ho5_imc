@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/bts/workspace/ho5_imc 
+CXX_INCLUDES = -I/home/bts/workspace/ho5_imc/ho5_imc 
 
